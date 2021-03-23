@@ -16,10 +16,13 @@
 package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
     primary = purple200,
@@ -32,14 +35,6 @@ private val LightColorPalette = lightColors(
     primaryVariant = purple700,
     secondary = teal200
 
-        /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
 )
 
 @Composable
@@ -56,4 +51,17 @@ fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() (
         shapes = shapes,
         content = content
     )
+}
+val Colors.cardBackgroundColor: Color
+    get() = if (isLight) Color.White else dark1
+@Composable
+fun MyThemedPreview(
+    darkTheme: Boolean = false,
+    content: @Composable () -> Unit
+) {
+    MyTheme(darkTheme = darkTheme) {
+        Surface(color = MaterialTheme.colors.background) {
+            content()
+        }
+    }
 }

@@ -13,14 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge.model
 
-import androidx.compose.ui.graphics.Color
+import com.example.androiddevchallenge.R
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
+data class Simple(
+    val locationName: String = "",
+    val date: Date,
+    val temperature: Temperature,
+) {
 
-val dark1 = Color(0xFF1A1A1A)
-val dark2 = Color(0xFF333333)
+    fun getWeekEEE(): String {
+        return SimpleDateFormat("EEE", Locale.getDefault()).format(date)
+    }
+
+    fun getDateMMdd(): String {
+        return SimpleDateFormat("MM-dd", Locale.getDefault()).format(date)
+    }
+
+    fun mapWeatherIconRes() = R.drawable.ic_sunny
+}
