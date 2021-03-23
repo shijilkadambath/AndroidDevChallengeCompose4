@@ -18,7 +18,7 @@ Participate in the #AndroidDevChallenge and learn Jetpack Compose Challenge
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="/results/1.png" width="260">&emsp;<img src="/results/2.png" width="260">&emsp;
+<img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">&emsp;
 
 ## License
 ```
